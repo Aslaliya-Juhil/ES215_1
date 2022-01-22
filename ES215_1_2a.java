@@ -15,7 +15,6 @@ public class ES215_1_2a {
                 M2[i][j] = (int) (10 * Math.random());
             }
         }
-        long start = System.nanoTime();
         int[][] M = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -26,9 +25,6 @@ public class ES215_1_2a {
                 M[i][j] = sum;
             }
         }
-        long end = System.nanoTime();
-        long nanosecs = end - start;
-        System.out.println(nanosecs);
         scan.close();
     }
 }
