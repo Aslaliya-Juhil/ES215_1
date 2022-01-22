@@ -1,11 +1,8 @@
 #include<iostream>
-#include<chrono>
 using namespace std;
-using namespace std::chrono;
 
 int main() {
-    unsigned long long arr[100];
-    auto start = high_resolution_clock::now();
+    int arr[100];
     arr[0] = 0;
     cout << arr[0] << endl;
     arr[1] = 1;
@@ -14,8 +11,5 @@ int main() {
         arr[i] = arr[i - 1] + arr [i - 2];
         cout << arr[i] << endl;
     }
-    auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<nanoseconds>(stop - start);
-    cout << "time : " << duration.count() << endl;
     return 0;
 }
