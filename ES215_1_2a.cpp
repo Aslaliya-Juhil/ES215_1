@@ -1,5 +1,4 @@
 #include <iostream>
-#include <chrono>
 
 int main()
 {
@@ -17,7 +16,6 @@ int main()
             M2[i][j] = rand() % 10;
         }
     }
-    auto start = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
@@ -30,8 +28,5 @@ int main()
             M[i][j] = sum;
         }
     }
-    auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = stop - start;
-    std::cout << "time: " << duration.count() << "\n";
     return 0;
 }
