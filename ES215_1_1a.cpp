@@ -1,7 +1,5 @@
 #include<iostream>
-#include<chrono>
 using namespace std;
-using namespace std::chrono;
 
 unsigned long long fibonacci(int n) {
     if(n == 1 || n == 2) {
@@ -11,7 +9,6 @@ unsigned long long fibonacci(int n) {
     }
 }
 int main() {
-    auto start = high_resolution_clock::now();
     // Here, the code was practically at stop after 50th number, so
     // to avoid waiting for a long time, I am stopping it on the 45th
     // step because it is already taking ~17 seconds, while printing
@@ -20,8 +17,5 @@ int main() {
     for(int i = 1; i <= 45; i++) {
         cout << fibonacci(i) << endl;
     }
-    auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<nanoseconds>(stop - start);
-    cout << "time: " << duration.count() << endl;
     return 0;
 }
