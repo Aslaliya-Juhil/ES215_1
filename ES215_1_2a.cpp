@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <chrono>
 int main()
 {
     int n;
@@ -16,6 +16,7 @@ int main()
             M2[i][j] = rand() % 10;
         }
     }
+    auto ti = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
@@ -28,5 +29,8 @@ int main()
             M[i][j] = sum;
         }
     }
+    auto tf = std::chrono::high_resolution_clock::now();
+    auto dur = std::chrono::duration_cast<std::chrono::nanoseconds>(tf-ti);
+    std::cout << dur.count() << std::endl;
     return 0;
 }
