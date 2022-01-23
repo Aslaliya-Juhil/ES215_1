@@ -16,6 +16,7 @@ public class ES215_1_2a {
             }
         }
         int[][] M = new int[n][n];
+        long ti = System.nanoTime();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 int sum = 0;
@@ -25,6 +26,8 @@ public class ES215_1_2a {
                 M[i][j] = sum;
             }
         }
+        long tf = System.nanoTime();
+        System.out.println(tf-ti);
         scan.close();
     }
 }
